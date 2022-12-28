@@ -1,0 +1,170 @@
+<div class="Better-Section-Main" id="{{ section.id }}">
+  <div class="Better-main">
+    <div class="Heading">
+      <h2 class="heading">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="flex-better">
+      {% for block in section.blocks %}
+        <div class="Main-blocks">
+          <div class="image" style="background-image:url({{ block.settings.image | img_url:'master' }})">
+            <span class="head">{{ block.settings.heading }}</span>
+            <span class="extra">{{ block.settings.extra }}</span>
+          </div>
+          <h2 class="title">{{ block.settings.title }}</h2>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Better Section",
+    "settings": [
+      {
+        "id" : "heading",
+        "type" : "text",
+        "label" : "Heading"
+      },
+      {
+        "id" : "background",
+        "type" : "color",
+        "label" : "Background Color",
+        "default" : "#F7F3ED"
+      }
+    ],
+    "blocks" : [
+      {
+        "name" : "block",
+        "type" : "block",
+        "settings" : [
+          {
+            "id" : "image",
+            "type" : "image_picker",
+            "label" : "Image"
+          },
+          {
+            "id" : "heading",
+            "type" : "text",
+            "label" : "Heading"
+          },
+          {
+            "id" : "extra",
+            "type" : "text",
+            "label" : "Extra Text"
+          },
+          {
+            "id" : "title",
+            "type" : "text",
+            "label" : "Title"
+          }
+        ]
+      }
+    ],
+    "presets" : [
+      {
+        "name" : "Better Section"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  #{{section.id}}{
+    background: {{section.settings.background}};
+  }
+  .Better-main {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 50px 20px;
+}
+  .Better-main .Heading {
+    margin-bottom: 50px;
+}
+  .flex-better {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+  .Main-blocks {
+    width: 25%;
+    padding: 2rem 0;
+}
+  .image{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 15% 10%;
+    
+  }
+  .image span.head {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 80px;
+    color: #95694C;
+}
+  .image span.extra {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 40px;
+    text-align: center;
+    color: #95694C;
+}
+  .Main-blocks h2.title {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #474747;
+}
+  .Heading h2.heading{
+    font-family: 'Sofia Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 50px;
+line-height: 55px;
+text-align: center;
+color: #95694C;
+    margin: 0;
+
+  }
+  @media(min-width:768px){
+    .Main-blocks .image{
+      background-image: none !important;
+      padding: 0;
+    }
+  }
+
+  @media(max-width:768px){
+    .Main-blocks {
+    width: 50%;
+}
+    .image span.head {
+    font-size: 50px;
+    line-height: 55px;
+      color: #FFFFFF;
+}
+  .image span.extra {
+    font-size: 30px;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+  .Main-blocks h2.title {
+    font-size: 22px;
+    line-height: 27px;
+}
+  .Heading h2.heading{
+    font-size: 32px;
+    line-height: 37px;
+  }
+  }
+</style>

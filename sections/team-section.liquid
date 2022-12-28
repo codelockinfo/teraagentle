@@ -1,0 +1,78 @@
+<div class="main-cls wrapper--brick" id="{{ section.id }}">
+  <div class="main-heading">
+    <h2 class="h4 standard__heading aos-init aos-animate"> {{ section.settings.heading }} </h2>
+  </div>
+  <div class="main-block-section">
+    {% for block in section.blocks %}
+    <div class="block-cls">
+      <p> {{ block.settings.text }} </p>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Team section",
+    "settings": [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+}
+],
+"blocks" : [
+{
+"name" : "block",
+"type" : "block",
+"settings" : [
+{
+"id" : "text",
+"type" : "textarea",
+"label" : "Text 1"
+}
+]
+}
+],
+"presets" : [
+{
+"name" : "Team section"
+}
+]
+  }
+{% endschema %}
+
+<style>
+  
+  .main-block-section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .block-cls {
+    width: 50%;
+    padding-right: 10%;
+  }
+  .main-cls{
+    padding:30px;
+    margin-top:0;
+    margin-bottom:0;
+  }
+  .main-cls .main-heading h1{
+    text-align:left;
+  }
+  
+  @media(max-width:749px){
+    .main-block-section{
+      display: block
+    }
+    .block-cls {
+    width: 100%;
+    padding: 0;
+    }
+    .main-cls{
+      padding:16px;
+    }
+    
+</style>

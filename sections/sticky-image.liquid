@@ -1,0 +1,105 @@
+<style>
+  
+  #{{section.id}} .image-sticky{
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    padding: 8% 0;
+    text-align: center;
+  }
+  #{{section.id}} h2.stcl{
+    color: {{ section.settings.color }};
+    font-family: sofia-pro!important;
+    letter-spacing: 2px;
+    font-size: 24px;
+  }
+  #{{section.id}} p.cclltext{
+    color: {{ section.settings.text }};
+  }
+  #{{section.id}} .content-sticky{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: {{section.settings.padding}};
+/*     padding: 0 5%; */
+  }
+  @media(max-width: 749px){
+    #{{section.id}} .image-sticky{
+/*       padding: 12% 0; */
+      padding: {{section.settings.mobile-padding}};
+    }
+  }
+  
+</style>
+
+
+<div class="main-section-sticky" id="{{section.id}}">
+  <div class="sticky-section">
+    <div class="image-sticky" style="background-image: url('{{section.settings.image | img_url: 'master'}}')">
+      <div class="content-sticky">
+      <h2 class="stcl"> {{ section.settings.heading }} </h2>
+      <p class="cclltext"> {{ section.settings.text }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Sticky Image",
+    "settings": [
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+},
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "text",
+"label" : "Text"
+},
+{
+"id" : "color",
+"type" : "color",
+"label" : "Heading Color",
+"default" : "#000"
+},
+{
+"id" : "text-color",
+"type" : "color",
+"label" : "Text Color",
+"default" : "#000"
+},
+{
+"id" : "padding",
+"type" : "text",
+"label" : "Padding",
+"default" : "8% 0"
+},
+{
+"id" : "mobile-padding",
+"type" : "text",
+"label" : "Mobile Padding",
+"default" : "15% 0"
+}
+],
+"presets" : [
+{
+"name" : "Sticky Image"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

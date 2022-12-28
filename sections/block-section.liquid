@@ -1,0 +1,179 @@
+<div class="main-section-cls" id="{{ section.id }}">
+  <div class="section-heading">
+    <div class="main-block-cls">
+      {% for block in section.blocks %}
+      <div class="cls-cls">
+      <div class="block-cls">
+        <div class="image-cls">
+          <img src="{{ block.settings.image | img_url:'100x100' }} ">
+        </div>
+        <div class="heading-cls">
+          <h2 class="h4 standard__heading aos-init aos-animate"> {{ block.settings.heading }} </h2>
+          <p> <a href="{{ block.settings.link }}"> {{ block.settings.text }} </a> </p>
+        </div>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Block section",
+    "settings": [
+{
+"id" : "color",
+"type" : "color",
+"label" : "Color"
+}
+],
+"blocks" : [
+{
+"name" : "block",
+"type" : "block",
+"settings" : [
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+},
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "text",
+"label" : "Text"
+},
+{
+"id" : "link",
+"type" : "url",
+"label" : "Link-url"
+}
+]
+}
+],
+"presets" : [
+{
+"name" : "Block section"
+}
+]
+  }
+{% endschema %}
+
+<style>
+  
+  .main-section-cls{
+    background: {{ section.settings.color }};
+    padding: 2%;
+  }
+  .section-heading{
+    max-width: 1270px;
+    width: 100%;
+    margin: auto;
+  }
+  .block-cls {
+    display: flex;
+    align-items: center;
+  }
+  .main-block-cls{
+    display: flex;
+  }
+  .image-cls{
+/*     width:15%; */
+  }
+  .image-cls img{
+/*     width:100%; */
+/*     height:100%; */
+  }
+  .heading-cls{
+    margin-left: 5%;
+  }
+  .heading-cls h2{
+    margin: 0;
+    font-size:20px;
+    
+  }
+  .cls-cls{
+    margin:auto;
+    width: 33%;
+  }
+  .heading-cls p a{
+   color : #95694c;
+  }
+  .heading-cls p{
+   text-decoration: underline;
+  }
+  @media(max-width:1000px){
+    .heading-cls p{
+        font-size:12px;
+    }
+    .cls-cls{
+      margin:auto;
+      width: 100%;
+    }
+  }
+  @media(max-width:750px){
+      .main-block-cls{
+        display:block;
+      }
+    .block-cls {
+      display: flex;
+      align-items: center;
+      width: 60%;
+      margin: 2% auto;
+      }
+    .cls-cls{
+      margin:auto;
+      width: 100%;
+    }
+  }
+  @media(max-width:600px){
+      .main-block-cls{
+        display:block;
+      }
+    .block-cls {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 2% auto;
+    }
+  }
+  @media(max-width:400px){
+      .main-block-cls{
+        display:block;
+      }
+    .block-cls {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 2% auto;
+     }
+    .cls-cls{
+      margin:auto;
+      width: 100%;
+    }
+  }
+  @media(max-width:400px){
+      .main-block-cls{
+        display:block;
+      }
+    .block-cls {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 2% auto;
+    }
+    .cls-cls{
+      margin:auto;
+      width: 100%;
+    }
+  }
+</style>

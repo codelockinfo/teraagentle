@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.8e6644a6e9b2b400849c4ec07e56b061ab1e6754.woff2?h1=dGVycmFnZW50bGUuaW4&hmac=5d40a5fe330858bcd506496e75a7877ef221e0c4c3e823d37f0f61960d76368b") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.51d3e10318b790966930940575f96c0d8aeccd8c.woff?h1=dGVycmFnZW50bGUuaW4&hmac=255fd81e554178807f09ec3d289bac9e301ca14dd17e3bff46b1fd50a32e0ec9") format("woff");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/roboto/roboto_n4.da808834c2315f31dd3910e2ae6b1a895d7f73f5.woff2?h1=dGVycmFnZW50bGUuaW4&hmac=4d6d48cfec47b4f410a73b33140b81d5215942d4e0d7d9cb6450e9c7c4a597bc") format("woff2"),
+       url("https://fonts.shopifycdn.com/roboto/roboto_n4.a512c7b68cd7f12c72e1a5fd58e7f7315c552e93.woff?h1=dGVycmFnZW50bGUuaW4&hmac=e9d2828a82b096887fe21660400bfa20422396871ddcb4cb32cc86a56dc6a233") format("woff");
+}
+
+
+
+
+
+  @font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/roboto/roboto_n5.126dd24093e910b23578142c0183010eb1f2b9be.woff2?h1=dGVycmFnZW50bGUuaW4&hmac=92030bd64f85f91d01f60f61e046fb6b9e4f49b353b2836c060f7c562bb408c0") format("woff2"),
+       url("https://fonts.shopifycdn.com/roboto/roboto_n5.ef0ac6b5ed77e19e95b9512154467a6fb9575078.woff?h1=dGVycmFnZW50bGUuaW4&hmac=3f6002a8e812b2ebbc4bcf205f35d91a07db5e7100be6cdd0e1d69ff99fe6796") format("woff");
+}
+
+
+
+
+
+
+
+  @font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/roboto/roboto_i4.f98951b4b9b6e1096fc799cd05debd098bd422ac.woff2?h1=dGVycmFnZW50bGUuaW4&hmac=8ab548e42467b44c0fa7c48ea0a939f30b0d6d0497011ccc35d4c70c78e005ef") format("woff2"),
+       url("https://fonts.shopifycdn.com/roboto/roboto_i4.688a26691d45bc4053b6ae24a196cabdeedbc25c.woff?h1=dGVycmFnZW50bGUuaW4&hmac=c2870c822add25e626b3c0ba2905960e9ed596dadc96329639efc7f3f6964372") format("woff");
+}
+
+
+
+
+  @font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/roboto/roboto_i5.f36fc99adea860c14560731a265eca6bf8df6add.woff2?h1=dGVycmFnZW50bGUuaW4&hmac=37584b39972c1d428d6be9eb5f19cd2ffda31c70994e6bf0186547ad2b46af73") format("woff2"),
+       url("https://fonts.shopifycdn.com/roboto/roboto_i5.cfb884f4c639e5d79041e9a98ea9ebe9ef79543c.woff?h1=dGVycmFnZW50bGUuaW4&hmac=2c44ac2b762f7bcb45b41449497efacaf24cda23f9cde2f145bbd829488f15b1") format("woff");
+}
+

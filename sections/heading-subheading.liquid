@@ -1,0 +1,121 @@
+<style>
+  .margin-cls{
+    background-color:{{ section.settings.backgroud }};
+  }
+  .main-personal-text{
+    max-width:1500px;
+    width:100%;
+    margin:auto;
+    padding:{{ section.settings.padding }}
+  }
+  .personal-text{
+    display:flex;
+    width:100%;
+  }
+  .only-text{
+    width:70%;
+    padding-right:1%;
+  }
+  .only-text h2{
+    color:{{ section.settings.color }};
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  .natuepera{
+    color:{{ section.settings.sub-color }};
+    font-size: 16px;
+  }
+  
+ 
+  @media(max-width:600px){
+    h2.bannetitle {
+    font-size: 30px !important;
+	}
+    p.bannerparegraph {
+      font-size: 16px;
+    }
+    .personal-text{
+      display:block;
+    }
+    .only-text{
+      width:100%;
+      padding:0;
+    }
+    .only-image{
+      width:100%;
+    }
+    .only-text h2{
+      
+      font-size:30px;
+      text-align:center;
+    }
+    .basic_structure2 {
+      width: 100%;
+    }
+  }
+  
+</style>
+<div class="margin-cls">
+  <div class="main-personal-text">
+    <div class="personal-text">
+      <div class="only-text fade-up animated fadeInUp cls-asap">
+        <h2> {{ section.settings.heading }} </h2>
+        <p class="natuepera"> {{ section.settings.text }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Heading Subheading",
+    "settings": [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "text",
+"label" : "Text"
+},
+{
+"id": "color",
+"type": "color",
+"label": "Heading Color"
+},
+{
+"id": "sub-color",
+"type": "color",
+"label": "Sub Heading Color"
+},
+{
+"id": "backgroud",
+"type": "color",
+"label": "Backgroud Color"
+},
+{
+"id" : "margin",
+"type" : "text",
+"label" : "Margin"
+},
+{
+"id" : "padding",
+"type" : "text",
+"label" : "Padding"
+}
+],
+"presets" : [
+{
+"name" : "Heading Subheading"
+}
+]
+  }
+{% endschema %}
+
+
+

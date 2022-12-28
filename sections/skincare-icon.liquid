@@ -1,0 +1,93 @@
+<div class="Main-cls" id="{{ section.id }}">
+  <div class="rowskin">
+
+    <div class="image_descri descri-cls">
+      <h2 class="h4 standard__heading aos-init aos-animate">{{ section.settings.heading }}</h2>
+      <p class="img_des">{{ section.settings.text }}<p>
+    </div>
+    <div class="columns code-current-cls">
+      {% for block in section.blocks %}
+      <div class="img_div current-cls">
+        <img src="{{ block.settings.image | img_url: '200x' }}">
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+"name": "Skin care icon",
+"settings": [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "text",
+"label" : "Text"
+}
+],
+"max_blocks": 3,
+"blocks": [
+{
+"type": "block",
+"name": "block",
+"settings": [
+{
+"type": "image_picker",
+"label": "Image",
+"id": "image"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Skin care icon"
+}
+]
+}
+{% endschema %}
+<style>
+
+  .Main-cls{
+    padding:4% 2%;
+  }
+  .rowskin{
+    display: flex;
+    max-width:1270px;
+    width:100%;
+    margin:auto;
+  }
+  .descri-cls{
+    padding-right: 5%;
+    width: 50%;
+  }
+  .img_div img{
+    width: 70%;
+  }
+  .code-current-cls{
+    display:flex;
+  }
+  @media(max-width:749px){
+      .rowskin{
+      	display: block;
+    }
+    .code-current-cls{
+    	display:block;
+      text-align:center;
+    }
+    .descri-cls{
+      padding-right: 0;
+      width: 100%;
+  	}
+    .img_div img{
+    	width: 50%;
+  }
+  }
+  
+</style>

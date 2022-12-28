@@ -1,0 +1,153 @@
+<div class="main-prd-section" style="color:{{section.settings.color-font}};">
+  <div class="prd-section" style="background:{{section.settings.color}};">
+    <div class="cls-image-with-text">
+      <img src="{{ section.settings.image | img_url:'master' }} ">
+    </div>
+    <div class="cls-text-section">
+      <h2 class="h4 standard__heading aos-init aos-animate"> <b> {{ section.settings.heading }} </b> </h2>
+      <p> {{ section.settings.text }} </p>
+      <div class="main-image">
+        <div class="image1">
+          <img src="{{ section.settings.image1 | img_url:'200x' }}">
+        </div>
+        <div class="image1">
+          <img src="{{ section.settings.image2 | img_url:'200x' }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "product-image-with-text",
+    "settings": [
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+},
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "textarea",
+"label" : "Text"
+},
+{
+"id" : "image1",
+"type" : "image_picker",
+"label" : "Image1"
+},
+{
+"id" : "image2",
+"type" : "image_picker",
+"label" : "Image2"
+},
+{
+"id" : "first-section",
+"type" : "text",
+"label" : "First section width",
+"default" : "40"
+},
+{
+"id" : "second-section",
+"type" : "text",
+"label" : "Second section width",
+"default" : "60"
+},
+{
+"id" : "color",
+"type" : "color",
+"label" : "Color",
+"default" :"#A3B59A"
+},
+{
+"id" : "color-font",
+"type" : "color",
+"label" : "Font Color",
+"default" :"#95694c"
+}
+],
+"presets" : [
+{
+"name" : "product-image-with-text"
+}
+]
+  }
+{% endschema %}
+
+
+
+<style> 
+  
+  .main-prd-section{
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 3%;
+  }
+  .prd-section{
+    display: flex;
+    width: 100%;
+/*     background: #A3B59A; */
+  }
+  .cls-image-with-text{
+    width: {{section.settings.first-section}}%;
+  }
+  .cls-image-with-text img{
+    width:100%;
+    height: 100%;
+  }
+  .cls-text-section{
+    width: {{section.settings.second-section}}%;
+/*     background: #A3B59A; */
+    padding: 0% 10%;
+    margin: auto;
+  }
+  .main-image{
+    display: flex;
+    margin-top: 5%;
+  }
+  .image1{
+    width: 50%;
+    margin: auto;
+  }
+  @media(max-width: 749px){
+    .prd-section{
+      display: block;
+      width: 100%;
+    }
+    .cls-image-with-text{
+      width: 100%;
+    }
+  .cls-image-with-text img{
+      width:100%;
+      height: 100%;
+    }
+  .cls-text-section{
+      width: 100%;
+      padding: 5%;
+      margin: auto;
+    }
+    .main-image{
+/*     display: block; */
+    margin-top: 5%;
+  }
+  .image1{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+    .image1 img{
+      width: 100%;
+    }
+  }
+  
+</style>

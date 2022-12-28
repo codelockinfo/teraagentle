@@ -1,0 +1,161 @@
+<div class="Logo-section-main" id="{{ section.id }}">
+  <div class="Logo-Sections">
+    {% if section.settings.heading != blank %}
+    <div class="heading-sections">
+      <img src="{{ section.settings.heading |img_url: 'large'}}">
+      <p class="text">{{ section.settings.text }}</p>
+    </div>
+      {% endif %}
+    <div class="main-logo">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+        <div class="first-logo">
+          <img src="{{ block.settings.image | img_url:'master' }}">
+          <h2 class="title">{{ block.settings.title }}</h2>
+        </div>
+      {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Logo Section",
+    "settings": [
+      {
+        "id" : "heading",
+        "type" : "image_picker",
+        "label" : "Heading"
+      },
+      {
+        "id" : "text",
+        "type" : "textarea",
+        "label" : "Text"
+      },
+      {
+        "id" : "background",
+        "type" : "color",
+        "label" : "Background Color",
+        "default" : "#F7F3ED"
+      }
+    ],
+    "blocks" : [
+      {
+        "name" : "block",
+        "type" : "block",
+        "settings" : [
+          {
+            "id" : "image",
+            "type" : "image_picker",
+            "label" : "Image"
+          },
+          {
+            "id" : "title",
+            "type" : "text",
+            "label" : "Heading"
+          }
+        ]
+      }
+    ],
+    "presets" : [
+      {
+        "name" : "Logo Section"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  #{{section.id}} {
+    padding: 100px 0;
+    background: {{section.settings.background}};
+}
+  .Logo-Sections{
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+  }
+  .heading-sections {
+    width: 50%;
+        border-right: 1px solid;
+}
+  .main-logo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+      justify-content: flex-end;
+  }
+  .first-logo{
+    width: 30%;
+    text-align: center;
+  }
+  .first-logo img{
+    width: 100%;
+    max-width: 150px
+  }
+  .heading-sections h2.heading {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 55px;
+    color: #95694C;
+    margin: 0;
+    text-align: center;
+}
+  .heading-sections p.text {
+
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 45px;
+/* or 150% */
+
+
+color: #95694C;
+
+}
+  .first-logo h2.title {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #737373;
+    margin: 20px 0;
+}
+  @media(max-width:768px){
+    .Logo-Sections {
+    display: block;
+}
+    .heading-sections {
+    width: 100%;
+    border-right: unset;
+    text-align: center;
+}
+    .main-logo {
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+    .first-logo img{
+    max-width: 70px
+  }
+  .heading-sections h2.heading {
+    font-size: 26px;
+    line-height: 31px;
+}
+  .heading-sections p.text {
+    font-size: 17px;
+    line-height: 22px;
+}
+.first-logo h2.title {
+    font-size: 11px;
+    line-height: 0px;
+}
+  }
+</style>

@@ -1,0 +1,128 @@
+<div class="{{ section.id }}" style="background:{{section.settings.color}};">
+<div class="main-cls" id="{{ section.id }}">
+  <div class="main-section-row">
+    <div class="main-heading-row">
+      <h2 class="h4 standard__heading aos-init aos-animate"> <b>  {{ section.settings.heading }} </b> </h2>
+    </div>
+    <div class="main-block-cls-row">
+      {% for block in section.blocks %}
+      <div class="block-cls-row">
+        <div class="row-cls">
+          <img src="{{ block.settings.image | img_url:'100x100' }}">
+          <div class="heading">
+            <h2 class="h4 standard__heading aos-init aos-animate"> {{ block.settings.heading }} </h2>
+            <p> {{ block.settings.text }} </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Beauty Icon",
+    "settings": [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "color",
+"type" : "color",
+"label" : "Color",
+"default" : "#fff"
+}
+],
+"blocks" : [
+{
+"name" : "block",
+"type" : "block",
+"settings" : [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "text",
+"label" : "Text"
+},
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+}
+]
+}
+],
+"presets" : [
+{
+"name" : "Beauty Icon"
+}
+]
+  }
+{% endschema %}
+
+<style>
+  
+  .main-cls{
+    max-width: 1270px;
+    width: 100%;
+    margin: auto;
+    padding: 5% 2%;
+  }
+  .main-block-cls-row{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+  .heading h2{
+    margin-bottom: 0;
+  }
+  .block-cls-row{
+    width:50%;
+    margin-bottom: 3%;
+    padding-right: 5%;
+  }
+  .row-cls{
+    display:flex;
+    align-items: center;
+  }
+  .row-cls img{
+    width: 12%;
+  }
+  .heading{
+    margin-left: 5%;
+  }
+  .heading p{
+    color: #5F5E5E;
+  }
+  .main-heading-row h2{
+    font-weight: 900;
+  }
+  
+  @media(max-width: 749px){
+    .main-block-cls-row{
+      display: block;
+      width: 100%;
+      margin-top: 2%;
+  	}
+    .block-cls-row{
+      width:100%;
+      padding-right: 0;
+    }
+    .main-heading-row h2{
+      text-align: center;
+    }
+  }
+    
+  
+  
+</style>

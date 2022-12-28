@@ -1,0 +1,181 @@
+{% assign image-position = section.settings.image-position %}
+<style>
+  
+  #{{section.id}} .main-section{
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+/*     padding: 2% 0; */
+    
+        padding: {{ section.settings.padding }};
+  }
+  #{{section.id}}{
+    padding: 0 16px;
+    background: {{ section.settings.color}};
+    margin: {{ section.settings.margin }};
+  }
+  #{{section.id}} .flex-section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: {{ section.settings.color}};
+  }
+  #{{section.id}} .flex-section.Right-img {
+    flex-direction: row-reverse;
+  }
+  #{{section.id}} .img-cls{
+    width: 50%;
+    margin: auto;
+  }
+  #{{section.id}} .cnt-cls{
+    width: 50%;
+    margin: auto;
+    padding: 0 5%;
+    background-color: {{ section.settings.text-cls-color }};
+  }
+  #{{section.id}} .img-cls img{
+    width: 100%;
+  }
+  #{{section.id}} .cnt-cls h2.head-cls{
+    font-family: sofia-pro!important;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: {{ section.settings.heading-color }};
+    font-weight: 700;
+  }
+  #{{section.id}} .cnt-cls p.text-cls{
+    font-size: 16px;
+    color: {{ section.settings.text-color }};
+  }
+  #{{section.id}} .img-cls img{
+    background: {{ section.settings.img-cls-color }};
+    display: flex;
+  }
+    @media(max-width:749px){
+      #{{section.id}} .img-cls{
+    width: 100%;
+    margin: auto;
+  }
+  #{{section.id}} .cnt-cls{
+    width: 100%;
+    margin: auto;
+    padding: 0 5%;
+  }
+    }
+  
+</style>
+
+
+<div class="main-terra-section" id="{{section.id}}">
+  <div class="main-section">
+    <div class="flex-section{% if image-position == 'Right' %} Right-img {% endif %}">
+      <div class="img-cls">
+        <img src="{{section.settings.image | img_url:'master'}}">
+      </div>
+      <div class="cnt-cls">
+        <h2 class="head-cls"> {{ section.settings.heading }} </h2>
+        <p class="text-cls"> {{ section.settings.text}} </p>
+<!--         <div class="btn-cls">
+          <p class="btn-txt"><a href=""> {{ section.settings.btn }} </a></p> 
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Custom image section",
+    "settings": [
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+},
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "text",
+"type" : "textarea",
+"label" : "Text"
+},
+{
+"id" : "btn",
+"type" : "text",
+"label" : "Button Text"
+},
+{
+        "type": "select",
+        "id": "image-position",
+        "label": "Image Position",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "Right",
+            "label": "Right"
+          }
+        ]
+      },
+{
+"id" : "color",
+"type" : "color",
+"label" : "Background Color",
+"default" : "#F7EDED"
+},
+{
+"id" : "heading-color",
+"type" : "color",
+"label" : "Heading Color",
+"default" : "#000"
+},
+{
+"id" : "text-color",
+"type" : "color",
+"label" : "Text Color",
+"default" : "#000"
+},
+{
+"id" : "img-cls-color",
+"type" : "color",
+"label" : "image section Color",
+"default" : "#fff"
+},
+{
+"id" : "text-cls-color",
+"type" : "color",
+"label" : "Text section Color",
+"default" : "#fff"
+},
+{
+"id" : "margin",
+"type": "text",
+"label" : "Margin"
+},
+{
+"id" : "padding",
+"type": "text",
+"label" : "Padding"
+}
+],
+"presets" : [
+{
+"name" : "Custom image section"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

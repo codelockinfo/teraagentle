@@ -1,0 +1,111 @@
+<div class="main-cls " id="{{ section.id }}">
+  <div class="wrapper--brick">
+  <div class="main-heading">
+    <h2 class="h4 standard__heading aos-init aos-animate"> {{ section.settings.heading }} </h2>
+  </div>
+  <div class="main-block-section">
+    {% for block in section.blocks %}
+    <div class="main-block">
+      <img src="{{ block.settings.image | img_url:'master' }}">
+      <h2 class="h4 standard__heading aos-init aos-animate"> {{ block.settings.heading }} </h2>
+      <p> {{ block.settings.text }} </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "story Grid",
+    "settings": [
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading"
+},
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+}
+],
+"blocks" : [
+{
+"name" : "block",
+"type" : "block",
+"settings" : [
+{
+"id" : "image",
+"type" : "image_picker",
+"label" : "Image"
+},
+{
+"id" : "heading",
+"type" : "text",
+"label" : "Heading",
+"default" : "BEN L."
+},
+{
+"id" : "text",
+"type" : "textarea",
+"label" : "Text"
+}
+]
+}
+],
+"presets" : [
+{
+"name" : "story Grid"
+}
+]
+  }
+{% endschema %}
+
+<style>
+  
+  .main-block-section{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .main-cls .wrapper--brick{
+    margin: 0 auto;
+  }
+  .main-cls{
+    padding-top: 10%;
+    background-color:#f7f3ed;
+    margin-bottom:0;
+    background-image: url({{ section.settings.image | img_url:'master'}});
+    background-size: cover;
+  }
+  .main-block{
+    width:33%;
+    padding:3%;
+    text-align:center;
+  }
+  .main-block img{
+    width:35%;
+    height:auto;
+  }
+  .main-block p{
+    text-align:left;
+  }
+  .main-heading h2{
+    text-align:center;
+  }
+  .main-block h2{
+    font-size: 20px;
+  }
+  
+  @media(max-width:749px){
+    .main-block-section{
+    display:block;
+  }
+  .main-block{
+    width:100%;
+  }
+    
+</style>
